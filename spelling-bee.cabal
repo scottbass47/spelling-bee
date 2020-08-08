@@ -1,0 +1,70 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2d230d1ff1ea8e66d3481c3c0b2b42a9884ab5c095c7abdcc4d0b5882e583bd6
+
+name:           spelling-bee
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/spelling-bee#readme>
+homepage:       https://github.com/githubuser/spelling-bee#readme
+bug-reports:    https://github.com/githubuser/spelling-bee/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+data-files:
+    data/*.txt
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/spelling-bee
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_spelling_bee
+  hs-source-dirs:
+      src
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , mtl
+  default-language: Haskell2010
+
+executable spelling-bee-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_spelling_bee
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , mtl
+    , spelling-bee
+  default-language: Haskell2010
+
+test-suite spelling-bee-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_spelling_bee
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , mtl
+    , spelling-bee
+  default-language: Haskell2010
